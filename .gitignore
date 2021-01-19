@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+server1.js
+server/api/routes/routes.js
+server/views/index.html
+server/api/posts.js
