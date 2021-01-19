@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema(
+const commissionSchema = new Schema(
   {
     username: {
       type: String,
@@ -31,7 +31,7 @@ const userSchema = new Schema(
       type: Boolean
     }
   },
-  {collection: 'users'}
+  {collection: 'commissions'}
 );
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('commission', commissionSchema);
