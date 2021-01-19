@@ -1,33 +1,20 @@
 {
   "name": "artcall",
   "version": "1.0.0",
-  "description": "Commissioning site for artists",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/annamariaruiz/ArtCall.git"
+    "start": "nodemon server.js"
   },
   "author": "Anna Ruiz",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/annamariaruiz/ArtCall/issues"
-  },
-  "homepage": "https://github.com/annamariaruiz/ArtCall#readme",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.12",
     "pug": "^3.0.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  }
+  "devDependencies": {},
+  "description": ""
 }
