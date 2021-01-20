@@ -7,7 +7,7 @@
 
 <script>
 import userForm from '../components/userForm.vue';
-import { api } from '../helpers/helpers';
+import { api } from '../helpers/Helpers';
 export default {
   name: 'new-user',
   components: {

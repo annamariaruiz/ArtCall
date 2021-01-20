@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { api } from '../helpers/helpers';
+import { api } from '../helpers/Helpers';
 export default {
   name: 'users',
   data() {

@@ -7,14 +7,14 @@
       <div class="ui label">
       <i class="users icon"></i>  user
       </div>
-      <input type="text" readonly  :value="user.user1"/>
+      <input type="text" readonly  :value="user.username"/>
     </div>
 
      <div class="ui labeled input fluid">
       <div class="ui label">
         <i class="info circle icon"></i> Details
       </div>
-      <input type="text" readonly  :value="user.user2"/>
+      <input type="text" readonly  :value="user.email"/>
     </div>
     <div class="actions">
       <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { api } from '../helpers/helpers';
+import { api } from '../helpers/Helpers';
 export default {
   name: 'show',
   data() {

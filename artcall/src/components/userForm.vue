@@ -7,14 +7,14 @@
       <div class="ui label">
         <i class="calendar plus icon"></i>user
       </div>
-      <input type="text" placeholder="Enter user..." v-model="user.user1" />
+      <input type="text" placeholder="Enter username..." v-model="user.username" />
     </div>
 
     <div class="ui labeled input fluid">
       <div class="ui label">
    <i class="info circle icon"></i> Details
       </div>
-      <input type="text" placeholder="Enter Details" v-model="user.user2" />
+      <input type="text" placeholder="Enter email" v-model="user.email" />
     </div>
 
     
@@ -32,8 +32,8 @@ export default {
       required: false,
       default: () => {
         return {
-          user1: '',
-          user2: ''
+          username: '',
+          email: ''
         };
       }
     }
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     onSubmit: function() {
-      if (this.user.user1 === '' || this.user.user2 === '') {
+      if (this.user.username === '' || this.user.email === '') {
         this.errorsPresent = true;
       } else {
         this.$emit('createOrUpdate', this.user);
