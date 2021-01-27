@@ -9,7 +9,7 @@ const routes = require('./api/routes/userRoutes');
 mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 mongoose.connect(
-  'mongodb+srv://admin:zerosuit@cluster0.eo59c.mongodb.net/?retryWrites=true&w=majority',
+  'mongodb+srv://admin:zerosuit@cluster0.eo59c.mongodb.net/ArtCall?retryWrites=true&w=majority',
   { useNewUrlParser: true }
 );
 
