@@ -1,6 +1,13 @@
-import { createApp } from "vue";
-import router from "./routes";
+import Vue from 'vue'
+import App from './App.vue'
 
-const app = createApp({});
-app.use(router);
-app.mount('#app')
+import 'semantic-ui-css/semantic.css'
+import routes from './routes.js'
+
+Vue.config.productionTip = false
+
+new Vue({
+  el: '#app',
+  router: routes,
+  render: h => h(App),
+}).$mount('#app')
