@@ -18,29 +18,5 @@ export default new Router({
       name: 'home',
       component: Home
     }
-    // {
-    //   path: '/',
-    //   redirect: '/users'
-    // },
-    // {
-    //   path: '/users',
-    //   name: 'users',
-    //   component: Users
-    // },
-    // {
-    //   path: '/users/new',
-    //   name: 'new-user',
-    //   component: New
-    // },
-    // {
-    //   path: '/users/:id',
-    //   name: 'show',
-    //   component: Show
-    // },
-    // {
-    //   path: '/users/:id/edit',
-    //   name: 'edit',
-    //   component: Edit
-    // }
   ]
 })
