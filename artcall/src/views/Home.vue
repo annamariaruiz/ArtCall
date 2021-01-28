@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div if='home'>
     <div id='center'>
     </div>
     <div id='commission-showcase'>

@@ -1,13 +1,13 @@
 <template>
-  <div id='profile'>
-    <h1>This is the profile page</h1>
-
+  <div>
+    <h1> ya login here dude</h1>
+    
   </div>
 </template>
 
 <script>
 export default {
-  name: 'profile'
+  name: 'login'
 }
 </script>
 

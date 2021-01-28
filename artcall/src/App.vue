@@ -1,16 +1,28 @@
 <template>
-  <div id="app">
-     <nav>
+  <div>
+    <nav>
       <div>
-        <router-link to='/'>Home</router-link> | 
-        <p>Home page</p>
+        <router-link to='/'><h1>Home</h1></router-link> 
       </div>
       <div id='account-login'>
-        <router-link to='/profile'>Profile</router-link>
-        <button class='accounts'>Sign up</button>
-        <button class='accounts'>Login</button>
+        <router-link to='/profile'>
+          <div>
+            Profile
+          </div>
+        </router-link>
+        <router-link to='login'>
+          <div class='login'>
+            Sign up
+          </div>
+        </router-link>
+        <router-link to='login'>
+          <div class='login'>
+            Login
+          </div>
+        </router-link>
       </div>
     </nav>
+  <router-view></router-view>
   </div>
 </template>
 
@@ -21,7 +33,16 @@ export default {
 </script>
 
 <style>
-a{
-  display: inline-block;
+html{
+  background-color: #c6dabf;
+}
+nav{
+  height: 70px;
+  background-color: #1a936f;
+  padding: 15px;
+  display: flex
+}
+#account-login{
+  
 }
 </style>

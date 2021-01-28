@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from './views/Home.vue';
 import Profile from './views/Profile.vue';
+import Login from './views/Login.vue'
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
       path:'/profile',//add on UID when database connection secured
       name: 'profile',
       component: Profile
+    },
+    {
+      path:'/login',
+      name: 'login',
+      component: Login
     }
   ]
 
