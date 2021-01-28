@@ -1,13 +1,23 @@
-import VueRouter from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
+import Home from './views/Home.vue';
+import Profile from './views/Profile.vue';
 
-const router = new VueRouter({
-  routes:[
+const routes = [
     {
       path: '/',
       name: 'home',
-      component: require('./views/Home.vue')
+      component: Home
+    },
+    {
+      path:'/profile',//add on UID when database connection secured
+      name: 'profile',
+      component: Profile
     }
   ]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
 
 export default router;

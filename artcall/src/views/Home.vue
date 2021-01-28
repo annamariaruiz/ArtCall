@@ -1,18 +1,9 @@
 <template>
   <div>
-    <nav>
-      <div>
-        <p>Home page</p>
-      </div>
-      <div id='account-login'>
-        <button class='accounts'>Sign up</button>
-        <button class='accounts'>Login</button>
-      </div>
-    </nav>
     <div id='center'>
     </div>
     <div id='commission-showcase'>
-      
+      <h1> oh look, you've made it to the home page</h1>
     </div>
 
   </div>
@@ -20,15 +11,15 @@
 
 <script>
 export default {
-  name: 'home',
-  data() {
-    return{
-      artists:[]
-    };
-  },
-  methods: {
+  name: 'home'
+  // data() {
+  //   return{
+  //     artists:[]
+  //   };
+  // },
+  // methods: {
     
-  }
+  // }
 }
 </script>
 

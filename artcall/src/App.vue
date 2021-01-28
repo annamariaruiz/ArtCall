@@ -1,26 +1,16 @@
 <template>
   <div id="app">
-    <div class="ui inverted segment navbar">
-      <div class="ui center aligned container">
-        <div class="ui large secondary inverted pointing menu compact">
-          <router-link to="/users" exact class="item">
-           <i class="users icon"></i> users
-          </router-link>
-          <router-link to="/users/new" class="item">
-            <i class="plus circle icon"></i> New
-          </router-link>
-      
-        </div>
+     <nav>
+      <div>
+        <router-link to='/'>Home</router-link> | 
+        <p>Home page</p>
       </div>
-    </div>
-
-    <div class="ui text container">
-      <div class="ui one column grid">
-        <div class="column">
-          <router-view />
-        </div>
+      <div id='account-login'>
+        <router-link to='/profile'>Profile</router-link>
+        <button class='accounts'>Sign up</button>
+        <button class='accounts'>Login</button>
       </div>
-    </div>
+    </nav>
   </div>
 </template>
 
@@ -31,27 +21,7 @@ export default {
 </script>
 
 <style>
-#app > div.navbar {
-  margin-bottom: 1.5em;
-}
-.myFlash {
-  width: 250px;
-  margin: 10px;
-  position: absolute;
-  top: 50;
-  right: 0;
-}
-input {
-  width: 300px;
-}
-div.label {
-  width: 120px;
-}
-div.input {
-  margin-bottom: 10px;
-}
-button.ui.button {
-  margin-top: 15px;
-  display: block;
+a{
+  display: inline-block;
 }
 </style>

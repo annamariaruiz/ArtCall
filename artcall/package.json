@@ -13,7 +13,7 @@
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.0.5",
     "vue-flash-message": "^0.7.2",
-    "vue-router": "^3.4.9"
+    "vue-router": "^4.0.3"
   },
   "resolutions": {
     "eslint-loader": "2.1.2"
