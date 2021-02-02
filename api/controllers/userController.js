@@ -37,8 +37,8 @@ exports.update_a_user = (req, res) => {
 
 exports.delete_a_user = (req, res) => {
   user.deleteOne({ _id: req.params.userId }, err => {
-    if (err) res.send(err);
-    res.json({
+    if (err) res.send(err)
+    else res.json({
       message: 'user successfully deleted',
      _id: req.params.userId
     });

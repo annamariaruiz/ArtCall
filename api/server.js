@@ -3,15 +3,20 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-global.user = require('./api/models/userModel');
-const routes = require('./api/routes/userRoutes');
+global.user = require('./models/userModel');
+const routes = require('./routes/userRoutes');
 
 mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 mongoose.connect(
   'mongodb+srv://admin:zerosuit@cluster0.eo59c.mongodb.net/ArtCall?retryWrites=true&w=majority',
-  { useNewUrlParser: true }
-);
+   { useNewUrlParser: true, useUnifiedTopology: true }
+  ).then(() => {
+    console.log('Database Connected')
+  },
+  error => {
+    console.log("Database couldn't be connected")
+  });
 
 const port = process.env.PORT || 3000;
 const app = express();

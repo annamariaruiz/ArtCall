@@ -10,7 +10,7 @@ const routes = [
       component: Home
     },
     {
-      path:'/profile',//add on UID when database connection secured
+      path:'/profile/:id',//add on UID when database connection secured
       name: 'profile',
       component: Profile
     },
