@@ -3,8 +3,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-global.user = require('./models/userModel');
-const routes = require('./routes/userRoutes');
+global
+  .user = require('./models/userModel')
+  .commission = require('./models/commissionModel')
+  .card = require('./models/cardModel');
+  
+const routes = require('./routes');
 
 mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);

@@ -5,7 +5,7 @@
         <router-link to='/'><h1>Home</h1></router-link> 
       </div>
       <div id='account-login'>
-        <router-link to='/profile'>
+        <router-link to='/profile/:id'>
           <div>
             Profile
           </div>

@@ -29,7 +29,13 @@
 <script>
 import CommissionCard from '/src/components/CommissionCard.vue'
 export default {
+  data(){
+    cards: []
+  },
   name: 'home',
+  methods: {
+    
+  },
   components: {
     'commission-card': CommissionCard
   }

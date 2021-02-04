@@ -4,19 +4,22 @@ const { Schema } = mongoose;
 
 const commissionSchema = new Schema(
   {
-    commissioner: {
+    username: {
       type: String,
       required: 'username cannot be blank'
     },
-    comissionee: {
+    artist: {
       type: String,
-      required: 'email cannot be blank'
+      required: 'artist cannot be blank'
     },
     price: {
       type: String,
       required: 'password cannot be blank'
     },
     details: {
+      type: String
+    },
+    datePosted: {
       type: Date
     }
   },
