@@ -4,7 +4,7 @@
     <div id='commission-details'>
       <h4> Price </h4>
       <p> Details </p>
-      <p> {{username}} </p>
+      <p> username </p>
     </div>
   </div>
 </template>

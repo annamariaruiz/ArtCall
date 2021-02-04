@@ -37,22 +37,24 @@ export default {
   name: 'login',
   methods:{
     handleSubmitForm() {
-      console.log(this.user)
-      axios.post('http://localhost:3000/users', 
-      this.user,
-      { headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
-      }
-      }).then(() => {
-        this.$router.push('/')
-        this.user = {
-          username:'',
-          email:'',
-          password:''
-        }
-      }).catch(error => {
-        console.log(error)
-      })
+      
+
+      // console.log(this.user)
+      // axios.post('http://localhost:3000/users', 
+      // this.user,
+      // { headers: {
+      //   'Content-type': 'application/x-www-form-urlencoded'
+      // }
+      // }).then(() => {
+      //   this.$router.push('/')
+      //   this.user = {
+      //     username:'',
+      //     email:'',
+      //     password:''
+      //   }
+      // }).catch(error => {
+      //   console.log(error)
+      // })
     }
   },
   components: {

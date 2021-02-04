@@ -20,24 +20,34 @@
         <commission-card></commission-card>
         <commission-card></commission-card>
         <commission-card></commission-card>
-
+      <p>{{cards[0]}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import CommissionCard from '/src/components/CommissionCard.vue'
 export default {
   data(){
-    cards: []
+    return {
+      cards: []
+    }
   },
   name: 'home',
   methods: {
-    
+
   },
   components: {
     'commission-card': CommissionCard
+  },
+  created() {
+    axios.get('http://localhost:3000/cards')
+      .then((response) => {
+        console.log(response.data)
+        this.cards = response.data
+      })
   }
 }
 </script>
