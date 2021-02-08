@@ -2,26 +2,16 @@
   <div if='home'>
     <div id='center'>
     </div>
-    <h1> oh look, you've made it to the home page</h1>
+    <h2> oh look, you've made it to the home page</h2>
     <div class='grid-container' id='commission-showcase'>
-      <div class='grid-row'>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-
-      </div>
-      <div class='grid-row'>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-
-      </div>
-      <div class='grid-row'>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-        <commission-card></commission-card>
-      <p>{{cards[0]}}</p>
-      </div>
+      <ul id='comm-cards'>
+        <li v-for="card in cards" :key='card.username'>
+          <commission-card
+            v-bind:username='card.username'
+            v-bind:price='card.price'
+            v-bind:details='card.details'></commission-card>   
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,7 +21,7 @@ import axios from 'axios';
 import CommissionCard from '/src/components/CommissionCard.vue'
 export default {
   data(){
-    return {
+    return{
       cards: []
     }
   },
@@ -45,8 +35,8 @@ export default {
   created() {
     axios.get('http://localhost:3000/cards')
       .then((response) => {
-        console.log(response.data)
         this.cards = response.data
+        console.log(this.cards)
       })
   }
 }
@@ -58,5 +48,17 @@ export default {
 }
 .grid-row{
   display: inline-block;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 1200px;
+}
+
+ul li{
+  width: 300px;
+  float: left;
 }
 </style>
