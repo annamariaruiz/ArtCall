@@ -1,26 +1,12 @@
 <template>
   <div>
     <nav>
-      <div>
-        <router-link to='/'><h1>Home</h1></router-link> 
-      </div>
-      <div id='account-login'>
-        <router-link to='/profile/:id'>
-          <div>
-            Profile
-          </div>
-        </router-link>
-        <router-link to='login'>
-          <div class='login'>
-            Sign up
-          </div>
-        </router-link>
-        <router-link to='login'>
-          <div class='login'>
-            Login
-          </div>
-        </router-link>
-      </div>
+      <ul>
+        <li class=navLinks id='navHome'><router-link to='/'>ArtCall</router-link> </li>
+        <li class=navLinks id='navProfile'><router-link to='/profile/:id'> Profile</router-link></li>
+        <li class=navLinks id='navSignup'><router-link to='login'>Sign up</router-link></li>
+        <li class=navLinks id='navLogin'><router-link to='login'>Login</router-link></li>
+      </ul>
     </nav>
   <router-view></router-view>
   </div>
@@ -34,15 +20,49 @@ export default {
 
 <style>
 html{
-  background-color: #c6dabf;
+  background-color: #EFE2BA;
 }
 nav{
-  height: 70px;
-  background-color: #1a936f;
-  padding: 15px;
-  display: flex
+  height: 60px;
+  width: 98%;
+  background-color: #4056A1;
+  padding: 10px;
+  margin: 0px;
+  display: inline-block;
+  overflow-y: auto;
 }
-#account-login{
-  
+
+ul{
+  list-style-type: none;
+  margin: 5px;
+  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.navLinks{
+  padding: 10px 0px 0px 0px;
+  text-align: center;
+}
+
+#navLogin, #navSignup, #navProfile{
+  float: right;
+  width: 80px;
+  height: 30px;
+  font-size: 19px;
+  margin: 15px 10px 0px 10px;
+  background-color: #C5CBE3;
+  border: 2px solid #D79922;
+  color: black
+}
+
+#navHome{
+  width: 100px;
+  height: 50px;
+  margin: 5px 25px;
+  font-size: 32px;
+  color: #F13C20;
 }
 </style>

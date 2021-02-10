@@ -1,6 +1,14 @@
 <template>
   <div if='home'>
     <div id='center'>
+      <div id=image>
+        <img src='../assets/images/home-painting.jpg' alt='painting of woods'>
+      </div>
+      <div id='callToAction'>
+        <h2>Let's Begin!</h2>
+        <div class='callToActionButton' id='join'>Join the Community</div>
+        <div class='callToActionButton' id='createComm'>Promote Yourself</div>
+      </div>
     </div>
     <h2> oh look, you've made it to the home page</h2>
     <div class='grid-container' id='commission-showcase'>
@@ -9,7 +17,8 @@
           <commission-card
             v-bind:username='card.username'
             v-bind:price='card.price'
-            v-bind:details='card.details'></commission-card>   
+            v-bind:details='card.details'
+            v-bind:_id='card._id'></commission-card>   
         </li>
       </ul>
     </div>
@@ -43,11 +52,30 @@ export default {
 </script>
 
 <style>
-.grid-container{
-  display: grid;
+#center{
+  background: #ff4805;
+  width: 80%;
+  height: 600px;
+  justify-content: center;
+  margin: auto;
+  padding: 10px
 }
-.grid-row{
-  display: inline-block;
+
+#image{
+  width: 70%;
+  height: 600px;
+  float: left;
+}
+
+#callToAction{
+  margin: 25px;
+  height: 600px;
+}
+
+img{
+  width: 70%;
+  margin: 25px;
+  align-content: center;
 }
 
 ul{

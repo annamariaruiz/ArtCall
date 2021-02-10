@@ -54,10 +54,13 @@ export default {
       }).catch(error => {
         console.log(error)
       })
+    },
+    handleLogin() {
+      console.log('login please')
     }
   },
   components: {
-
+    
   }
 }
 </script>

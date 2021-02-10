@@ -1,12 +1,14 @@
 <template>
-  <div class='commCard'>
-    <img id='commission-thumbnail'>
-    <div id='commission-details'>
-      <h4> {{price}} </h4>
-      <p> {{details}} </p>
-      <p> {{username}} </p>
+    <a href='commission/{{_id}}'>
+    <div class='commCard'>
+      <img id='commission-thumbnail'>
+      <div id='commission-details'>
+        <h4> {{price}} </h4>
+        <p> {{details}} </p>
+        <a href='profile/{{username}}'><p> {{username}} </p></a>
+      </div>
     </div>
-  </div>
+    </a>
 </template>
 
 <script>
@@ -15,7 +17,8 @@ export default {
   props: {
     username: String,
     price: String,
-    details: String
+    details: String,
+    _id: String
   },
   data() {
     return {
@@ -32,10 +35,10 @@ export default {
 .commCard{
   height: 300px;
   width: 200px;
-  padding: 25px;
-  margin: 10px;
-  background-color: #f3e9d2;
-  border: 2px solid #114b5f;
+  padding: 35px;
+  margin: 5px;
+  background-color: #C5CBE3;
+  border: 2px solid #D79922;
 }
 #commission-thumbnail{
   width: 195px;
