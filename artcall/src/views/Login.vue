@@ -40,11 +40,8 @@ export default {
 
       console.log(this.user)
       axios.post('http://localhost:3000/users', 
-      this.user,
-      { headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
-      }
-      }).then(() => {
+      this.user
+      ).then(() => {
         this.$router.push('/')
         this.user = {
           username:'',
