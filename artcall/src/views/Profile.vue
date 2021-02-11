@@ -13,10 +13,10 @@ export default {
     username: String
   },
   created() {
-    // const urlParams = new URLSearchParams(window.location.search)
-    // console.log(window.location.search)
-    // const username = urlParams.get('username')
-    // console.log(username)
+    const urlParams = new URLSearchParams(window.location.search)
+    console.log(window.location.search)
+    const username = urlParams.get('username')
+    console.log(username)
   }
 }
 </script>

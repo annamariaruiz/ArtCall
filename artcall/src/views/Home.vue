@@ -6,11 +6,10 @@
       </div>
       <div id='callToAction'>
         <h2>Let's Begin!</h2>
-        <div class='callToActionButton' id='join'>Join the Community</div>
-        <div class='callToActionButton' id='createComm'>Promote Yourself</div>
+        <!-- <div class='callToActionButton' id='join'><p>Join the Community</p></div>
+        <div class='callToActionButton' id='createComm'><p>Promote Yourself</p></div> -->
       </div>
     </div>
-    <h2> oh look, you've made it to the home page</h2>
     <div class='grid-container' id='commission-showcase'>
       <ul id='comm-cards'>
         <li v-for="card in cards" :key='card.username'>
@@ -55,7 +54,7 @@ export default {
 #center{
   background: #ff4805;
   width: 80%;
-  height: 600px;
+  height: 580px;
   justify-content: center;
   margin: auto;
   padding: 10px
@@ -63,13 +62,21 @@ export default {
 
 #image{
   width: 70%;
-  height: 600px;
+  height: 500px;
   float: left;
 }
 
 #callToAction{
   margin: 25px;
   height: 600px;
+}
+
+.callToActionButton{
+  height: 60px;
+  /* width: 10px; */
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #C5CBE3;
 }
 
 img{

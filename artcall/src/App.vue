@@ -20,7 +20,7 @@ export default {
 
 <style>
 html{
-  background-color: #EFE2BA;
+  background-color: #f5eeda;
 }
 nav{
   height: 60px;

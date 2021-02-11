@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import Home from './views/Home.vue';
 import Profile from './views/Profile.vue';
 import Login from './views/Login.vue'
+import FullComm from './views/FullCommission.vue'
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
       path:'/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/commission/:id',
+      name: 'commission',
+      component: FullComm
     }
   ]
 

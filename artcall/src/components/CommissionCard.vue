@@ -5,7 +5,12 @@
       <div id='commission-details'>
         <h4> {{price}} </h4>
         <p> {{details}} </p>
-        <a href='profile/{{username}}'><p> {{username}} </p></a>
+        {{username}}
+        <!-- <router-link :to="{ path: '/profile/ + username', params: {username: username } }">{{username}}</router-link> -->
+      </div>
+      <div>
+        <router-link to='/commissions/{{id}}'></router-link>
+        <h3>Commission Me!</h3>
       </div>
     </div>
     </a>
@@ -33,15 +38,15 @@ export default {
 
 <style>
 .commCard{
-  height: 300px;
-  width: 200px;
-  padding: 35px;
-  margin: 5px;
+  height: 450px;
+  width: 220px;
+  padding: 15px;
+  margin: 15px;
   background-color: #C5CBE3;
   border: 2px solid #D79922;
 }
 #commission-thumbnail{
-  width: 195px;
+  width: 175px;
   height: 150px;
 }
 </style>
