@@ -18,7 +18,7 @@ module.exports = app => {
     .get(commissionBuilder.list_all_commissions)
     .post(commissionBuilder.create_a_commission)
 
-  app.route('/commission/:commissionId')
+  app.route('/commissions/:commissionId')
     .get(commissionBuilder.read_a_commission)
     .put(commissionBuilder.update_a_commission)
     .delete(commissionBuilder.delete_a_commission)
@@ -27,7 +27,7 @@ module.exports = app => {
     .get(cardBuilder.list_all_cards)
     .post(cardBuilder.create_a_card)
 
-  app.route('/commission/:commissionId')
+  app.route('/cards/:cardId')
     .get(cardBuilder.read_a_card)
     .put(cardBuilder.update_a_card)
     .delete(cardBuilder.delete_a_card)

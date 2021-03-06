@@ -13,8 +13,8 @@
       <form @submit.prevent='handleSubmitForm'>
         <input type='text' id='username' v-model='user.username' placeholder='Username' required><br>
         <input type='email' id='email' v-model='user.email' placeholder='email' required><br>
-        <input type='text' id='password' v-model='user.password' placeholder='Password' required><br>
-        <input type='text' id='repassword' name='repassword' placeholder='Retype Password' required><br>
+        <input type='password' id='password' v-model='user.password' placeholder='Password' required><br>
+        <input type='password' id='repassword' name='repassword' placeholder='Retype Password' required><br>
         <input type='submit' value='Submit'>
       </form>
     </div>

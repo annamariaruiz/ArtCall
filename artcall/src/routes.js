@@ -3,6 +3,7 @@ import Home from './views/Home.vue';
 import Profile from './views/Profile.vue';
 import Login from './views/Login.vue'
 import FullComm from './views/FullCommission.vue'
+import NewComm from './views/NewComm.vue'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
       path: '/commission/:id',
       name: 'commission',
       component: FullComm
+    },
+    {
+      path:'/commission/new',
+      name: 'newComm',
+      component: NewComm
     }
   ]
 

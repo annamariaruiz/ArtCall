@@ -1,24 +1,37 @@
 <template>
   <div>
-    <!-- <h2><router-link :to="{ path: '/profile/ + username', params: {username: username } }">{{username}}</router-link></h2> -->
+    <!-- <router-link path: "/profile/" + username> -->
     <h1>Profile Preview</h1>
+    <h4>{{username}}</h4>
+    <!-- </router-link> -->
   </div>
     
 </template>
 
 <script>
+// import axios from 'axios'
 export default {
-  name: 'commission-card',
+  name: 'profile-preview',
+  data() {
+    return {
+      // profile: {
+      //   username: ''
+      // }
+    }
+  },
   props: {
     username: String,
     price: String,
     details: String,
-    _id: String
+    id: String
   },
-  data() {
-    return {
+  created(){
+    // this.username = this.$route.params.username
 
-    }
+    // axios.get('http://localhost:3000/users/' + this.profileid)
+    //   .then((response) => {
+    //     this.profile = response.data
+    //   })
   },
   methods: {
     

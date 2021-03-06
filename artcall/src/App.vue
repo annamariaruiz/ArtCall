@@ -24,12 +24,10 @@ html{
 }
 nav{
   height: 60px;
-  width: 98%;
+  width: 99.4%;
   background-color: #4056A1;
   padding: 10px;
-  margin: 0px;
-  display: inline-block;
-  overflow-y: auto;
+  display: flex;
 }
 
 ul{
@@ -64,5 +62,21 @@ a{
   margin: 5px 25px;
   font-size: 32px;
   color: #F13C20;
+}
+
+@media all and (max-width: 1000px){
+  nav{
+    max-width: 95%
+  }
+  #navLogin, #navSignup, #navProfile{
+  float: left;
+  width: 60px;
+  height: 24px;
+  font-size: 14px;
+  margin: 15px 10px 0px 10px;
+  background-color: #C5CBE3;
+  border: 2px solid #D79922;
+  color: black
+  }
 }
 </style>

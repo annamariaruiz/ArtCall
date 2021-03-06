@@ -17,7 +17,7 @@ exports.create_a_user = (req, res) => {
 };
 
 exports.read_a_user = (req, res) => {
-  user.findById(req.params.userId, (err, user) => {
+  user.findOne({'username' : req.params.username }, (err, user) => {
     if (err) res.send(err);
     res.json(user);
   });

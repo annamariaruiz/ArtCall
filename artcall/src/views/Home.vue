@@ -6,11 +6,30 @@
       </div>
       <div id='callToAction'>
         <h2>Let's Begin!</h2>
-        <!-- <div class='callToActionButton' id='join'><p>Join the Community</p></div>
-        <div class='callToActionButton' id='createComm'><p>Promote Yourself</p></div> -->
+          <router-link to='login'>
+            <div class='callToActionButton' id='join'>
+              <p>Join the Community</p>
+            </div>
+          </router-link>
+          <router-link to='/commission/new'>
+          <div class='callToActionButton' id='createComm'><p>Promote Yourself</p></div>
+          </router-link>
       </div>
     </div>
     <div class='grid-container' id='commission-showcase'>
+      <form @submit.prevent='filter'>
+        <label for='artStyle'> Art Styles </label>
+        <select id='artStyle' name='artStyle'>
+          <option value='realistic'>Realistic</option>
+          <option value='abstract'>Abstract</option>
+          <option value='vector-art'>Vector art</option>
+          <option value='stencil'>Stencil</option>
+          <option value='pixel'>Pixel</option>
+        </select>
+        <label for='search'> Search </label>
+        <input type='text' name='search'>
+        <input type='submit'>
+      </form>
       <ul id='comm-cards'>
         <li v-for="card in cards" :key='card.username'>
           <commission-card
@@ -30,12 +49,15 @@ import CommissionCard from '/src/components/CommissionCard.vue'
 export default {
   data(){
     return{
-      cards: []
+      cards: [],
+      artStyles: []
     }
   },
   name: 'home',
   methods: {
-
+    filter(){
+      
+    }
   },
   components: {
     'commission-card': CommissionCard
@@ -44,7 +66,6 @@ export default {
     axios.get('http://localhost:3000/cards')
       .then((response) => {
         this.cards = response.data
-        console.log(this.cards)
       })
   }
 }
@@ -53,35 +74,35 @@ export default {
 <style>
 #center{
   background: #ff4805;
-  width: 80%;
   height: 580px;
   justify-content: center;
-  margin: auto;
-  padding: 10px
+  display: flex;
+  padding: 5px;
+  margin: 0px 0px 25px 0px;
+  width: 99.4%;
 }
 
-#image{
-  width: 70%;
-  height: 500px;
-  float: left;
+#commission-showcase{
+  width: 1800px;
+
 }
 
 #callToAction{
   margin: 25px;
   height: 600px;
+  width: 200px;
 }
 
 .callToActionButton{
-  height: 60px;
-  /* width: 10px; */
-  padding: 15px;
+  height: 70px;
+  padding: 5px;
   margin: 5px;
-  border: 1px solid #C5CBE3;
+  font-size: 22px;
+  background-color: #4056A1;
 }
 
 img{
-  width: 70%;
-  margin: 25px;
+  height: 580px;
   align-content: center;
 }
 

@@ -2,21 +2,34 @@
   <div id='profile'>
     <h1>This is the profile page</h1>
     <p>{{username}}</p>
+    <p>{{email}}</p>
 
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'profile/:username',
   props: {
-    username: String
+  },
+  data(){
+    return{
+      profile:{
+        id:'',
+        username:'',
+        email:''
+        
+      }
+    }
   },
   created() {
-    const urlParams = new URLSearchParams(window.location.search)
-    console.log(window.location.search)
-    const username = urlParams.get('username')
-    console.log(username)
+    this.username = this.$route.params.id
+    axios.get('http://localhost:3000/users/' + this.username)
+      .then((response) => {
+        this.profile = response.data
+        console.log(response.data)
+      })
   }
 }
 </script>

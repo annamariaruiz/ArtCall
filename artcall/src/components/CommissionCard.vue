@@ -1,19 +1,17 @@
 <template>
-    <a href='commission/{{_id}}'>
-    <div class='commCard'>
-      <img id='commission-thumbnail'>
+    <div class='card'>
+      <router-link :to=commLink>
+      <img id='commission-thumbnail' src='../assets/images/commission_thumbnail.jpg'>
       <div id='commission-details'>
-        <h4> {{price}} </h4>
+        <h4> ${{price}} </h4>
         <p> {{details}} </p>
-        {{username}}
-        <!-- <router-link :to="{ path: '/profile/ + username', params: {username: username } }">{{username}}</router-link> -->
+        <router-link :to=profLink><p id='username'>{{username}}</p></router-link>
+        <div>
+          <h3>Commission Me!</h3>
+        </div>
       </div>
-      <div>
-        <router-link to='/commissions/{{id}}'></router-link>
-        <h3>Commission Me!</h3>
-      </div>
+      </router-link>
     </div>
-    </a>
 </template>
 
 <script>
@@ -23,12 +21,17 @@ export default {
     username: String,
     price: String,
     details: String,
-    _id: String
+    _id: String,
   },
   data() {
     return {
-
+      commLink: '',
+      profLink: ''
     }
+  },
+  created() {
+    this.commLink = '/commission/' + this._id
+    this.profLink = '/profile/' + this.username
   },
   methods: {
     
@@ -37,16 +40,32 @@ export default {
 </script>
 
 <style>
-.commCard{
-  height: 450px;
-  width: 220px;
+.card{
+  height: 340px;
+  width: 215px;
+  margin: 35px;
   padding: 15px;
-  margin: 15px;
   background-color: #C5CBE3;
   border: 2px solid #D79922;
 }
 #commission-thumbnail{
-  width: 175px;
-  height: 150px;
+  float: left;
+  margin: 5px;
+}
+#commission-details{
+  padding: 15px 0px 15px 15px;
+}
+#username{
+  font-size: 22px;
+}
+#username:hover{
+  color: #F13C20
+}
+
+a{
+  color: black;
+}
+a:hover{
+  border: 2px solid #4056A1;
 }
 </style>

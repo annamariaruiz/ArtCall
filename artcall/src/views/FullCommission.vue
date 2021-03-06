@@ -3,19 +3,21 @@
     <div id='left'>
       <img id='preview' src='../assets/images/home-painting.jpg' alt='placeholder'>
       <h2> Starting Price </h2>
-      <p> {{startingPrice}} </p>
+      <p> {{card.price}} </p>
       <h2> Artist Details </h2>
-      <p> {{artistDetails}} </p>
+      <p> {{card.details}} </p>
     </div>
     <div id='right'>
       <div id='artistPreview'>
-        <profile-preview></profile-preview>
+        <profile-preview
+          v-bind:username='card.username'>
+        </profile-preview>
       </div>
       <div id='commRequest'>
         <form @sumbit.prevent='handleSubmitForm'>
-          <input type='text' id='username' v-model='commission.username' placeholder='username' required><br>
-          <input type='text' id='price' v-model='commission.price' placeholder='price' required><br>
-          <input type='text' id='details' v-model='commission.details' placeholder='details' required><br>
+          <input type='text' id='commUsername' v-model='commission.commUsername' placeholder='username' required><br>
+          <input type='text' id='commPrice' v-model='commission.commPrice' placeholder='price' required><br>
+          <input type='text' id='commDetails' v-model='commission.commDetails' placeholder='details' required><br>
           <input type='submit' value='Request'>
         </form>
       </div>
@@ -30,32 +32,35 @@ export default {
   data(){
     return{
       commission: {
+        commUsername: 'username',
+        commPrice: 'price',
+        commDetails: 'details'
+      },
+      card: {
         username:'',
-        artist: this.artist,
         price:'',
-        details:''
-      }
+        details:'',
+        id: ''
+      },
     }
   },
   props: {
-    artist: String,
-    startingPrice: String,
-    artistDetails: String,
-    commId: String
+    commUsername: String,
+    commPrice: String,
+    commDetails: String
   },
   name: 'login',
   methods:{
   handleSubmitForm() {
-      console.log(this.commission)
+      console.log(this.card)
       axios.post('http://localhost:3000/users', 
       this.commission
       ).then(() => {
         this.$router.push('/')
         this.commission = {
-          username:'',
-          artist:'',
-          price:'',
-          details:''
+          commUsername:'',
+          commPrice:'',
+          commDetails:''
         }
       }).catch(error => {
         console.log(error)
@@ -63,7 +68,11 @@ export default {
     }
   },
   created() {
-    console.log(this.artist)
+    this.id = this.$route.params.id
+    axios.get('http://localhost:3000/cards/' + this.id)
+      .then((response) => {
+        this.card = response.data
+      })
   },
   components: {
     'profile-preview': ProfilePreview

@@ -10,7 +10,11 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.13.6",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "semantic-ui-css": "^2.4.1",
     "vue": "^3.0.5",
     "vue-flash-message": "^0.7.2",
